@@ -7,6 +7,13 @@ const arrayDayWeek = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira"
 const dialogPonto = document.getElementById("dialog-ponto");
 
 
+navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position);
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
+});
+
+
 
 const btnRegistrarPonto = document.getElementById("btn-registrar-ponto");
 btnRegistrarPonto.addEventListener("click", () => {
@@ -14,10 +21,33 @@ btnRegistrarPonto.addEventListener("click", () => {
 });
 
 
+
 const btnDialogFechar = document.getElementById("btn-dialog-fechar");
 btnDialogFechar.addEventListener("click", () => {
     dialogPonto.close();
+});
+
+ 
+
+const btnDialogRegistrarPonto = document.getElementById("btn-dialog-registrar-ponto");
+btnDialogRegistrarPonto.addEventListener("click", () => {
+
+    let data = dataCompleta();
+    let hora = horaCompleta();
+    let tipoPonto = document.getElementById("select-tipos-ponto").value;
+
+    let ponto = {
+        "data": dataCompleta,
+        "hora": hora,
+        "tipo": tipoPonto,
+        "id": 1
+    }
+
+    localStorage.setItem("registro", JSON.stringify(ponto));
+
+    console.log(ponto);
 })
+
 
 
 function daySemana(){
@@ -28,13 +58,13 @@ function daySemana(){
 
 function dataCompleta() {
     const date = new Date();
-    return date.getDate() + "/" +  (date.getMonth() + 1) + "/" + date.getFullYear();
+    return String(date.getDate()).padStart(2, '0') + "/" +  String(date.getMonth() + 1).padStart(2, "0") + "/" + date.getFullYear();
 }
 
 
 function horaCompleta() {
     const date = new Date();
-    return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    return String(date.getHours()).padStart(2, '0') + ":" + String(date.getMinutes()).padStart(2, '0') + ":" + String(date.getSeconds()).padStart(2, '0');
 }
 
 
