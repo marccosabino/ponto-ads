@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", exibirDadosLocalStorage);
 
 
 
-// botao do menu
+//BOTÃO DO MENU
 document.getElementById('menu-toggle').addEventListener('click', function() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active'); // Adiciona ou remove a classe 'active'

@@ -1,149 +1,127 @@
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: #fff;
     margin: 0px;
-    font-family: 'Courier New', Courier, monospace;
-    }
+    top: 0;
+    font-family: 'Anton', Courier, monospace;
+}
     
     
+ 
+/*DATA E HORA (PÁGINA PRINCIPAL)*/   
+.data-hora p {
+    color: #000000;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+/*BOTÃO PARA FECHAR O DIALOG/CARD*/
+.btn-dialog-fechar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0px;
+    height: 35px;
+    width: 40px;
+    color: #ff0000;
+    background-color: #fff;
+    cursor: pointer;
+}
     
     
-    .data-hora p{
-        color: #000000;
-        padding-top: 10px;
-        text-align: center;
-        font-size: 35px;
+/*BOTÃO SELECT*/
+#select-tipos-pontos {
+    font-size: 15px;
+    padding: 30px;
+    color: #000000;
+    background-color: #fff;
+    border: 0px;
+}
     
-    }
-    
-    /*estilo do botao de fechar o dialog*/
-    .btn-dialog-fechar{
-        position: absolute;
-        top: 0;
-        right: 0;
-        border: 0px;
-        height: 35px;
-        width: 40px;
-        color: #1f1414;
-        background-color: white;
-        cursor: pointer;
-    }
+#dialog-ponto p {
+    font-style: normal;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
     
     
-    /* estilo do select*/
-    #select-tipos-pontos{
-        font-size: 1.15rem;
-        
-        padding: 27px;
-        color: #000000;
-        background-color: rgb(255, 255, 255);
-        border: 0px;
-    }
-    
-    
-    
-    
-    
-    
-    #dialog-ponto p{
-        font-weight: 300;
-        font-style: normal;
-        font-size: 2rem;
-    }
-    
-    
-    
-    
-    /*estilo do botao dentro do dialog*/
-    #btn-dialog-registrar-ponto{
-        color: #ffffff;
-        background-color:rgb(33, 163, 238) ;
-        border: 0px;
-    }
-    
-    
-    #btn-dialog-registrar-ponto:hover{
-        background-color: #00b7ff;   
-        }
-        #btn-dialog-registrar-ponto:active{
-        background-color: rgb(1, 52, 146);
-        }
+       
+/*BOTÃO DENTRO DO DIALOG*/
+#btn-dialog-registrar-ponto{
+    color: #fff;
+    background-color:#007bff;
+    border: 5px;
+}
+  
+#btn-dialog-registrar-ponto:hover{
+    background-color: #00b7ff;   
+}
+
+#btn-dialog-registrar-ponto:active{
+    background-color: rgb(1, 52, 146);
+}
         
     
+
+/*estilo da div do botao de abrir*/
+#div-btnresgistrar-ponto {
+    text-align: center;
+    padding: 35px;
+    background-color: #ffffff;
+}   
     
     
     
+
+/*'REGISTRAR PONTO' PRINCIPAL*/
+#btn-registrar-ponto, #btn-dialog-registrar-ponto{
+    text-align: center;
+    font-size: 12px;
+    background-color:#1269ff ;
+    width: 200px;
+    height: 75px;
+    border: 0px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#btn-registrar-ponto:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#btn-registrar-ponto:active {
+    background-color: rgb(1, 52, 146);
+}
     
     
-    /*estilo da div do botao de abrir*/
-    #div-btnresgistrar-ponto{
-        text-align: center;
-        padding: 35px;
-        background-color: #ffffff;
-    
-    
-    }
-    
-    
-    
-    
-    
-    
-    /*estilo do botao de abrir*/
-    
-    #btn-registrar-ponto, #btn-dialog-registrar-ponto{
-        text-align: center;
-            background-color:#1269ff ;
-            width: 200px;
-            height: 75px;
-            border: 0px;
-            cursor: pointer;
-        }
-        #btn-registrar-ponto:hover{
-        background-color: #00b7ff;
-        }
-        #btn-registrar-ponto:active{
-        background-color: rgb(1, 52, 146);
-        }
-    
-    
-    
-    
-    
-    
-    
-    #div-alerta{
+ 
+/*FORMATAÇÃO DO ALERT*/
+#div-alerta {
     color: #fff;
     background-color: #00b7ff;
     position: absolute;
     bottom: 15px;
     right: 15px;
-    
-    
-    }
-    
-    
-    
-    
-    
-    .show{
-    
-        opacity: 1;
-    
-    
-    
-    }
-    
-    
-    .hidden{
-    
+}
+
+
+.show{
+    opacity: 1;
+}
+
+
+.hidden{
     opacity: 0;
-    
-    
-    }
+}
 
 
-/* dialog de registros passados */
 
+/*CARD DIALOG*/
 .dialog-registros{
     padding: 0px;
     width: 600px;
@@ -163,10 +141,7 @@ body{
 
 
 
-
-
-
-/* Botão do menu */
+/*BOTÃO DO MENU*/
 .menu-button {
     background-color: #007bff;
     color: white;
@@ -175,7 +150,7 @@ body{
     padding: 12px 20px;
     cursor: pointer;
     position: fixed;
-    top: 380px;
+    top: 20px;
     left: 20px;
     transition: background-color 0.3s, transform 0.3s;
     box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
@@ -186,7 +161,7 @@ body{
     transform: scale(1.05);
 }
 
-/* Sidebar */
+/*SIDEBAR*/
 .sidebar {
     width: 180px;
     background: linear-gradient(135deg, #36a2ef, #1909fc);
@@ -210,21 +185,21 @@ body{
 .sidebar button {
     background: none;
     border: none;
-    color: white;
+    color: #fff;
     text-align: left;
     padding: 15px 20px;
- 
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
+    top: 0;
 }
 
 .sidebar button::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 0;
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -236,10 +211,12 @@ body{
 .sidebar button:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateX(10px);
+    top: 0;
 }
 
 .sidebar button:hover::before {
     background: #000000;
+    top: 0;
 }
 
 /* Inputs */
@@ -265,14 +242,14 @@ div {
     margin-top: 20px;
 }
 
-/* Configurações do diálogo */
+/* Configurações do dialog*/
 dialog {
     margin: 20px auto;
-    width: 300px;
+    width: 400px;
     animation: slideIn 0.3s; 
 }
 
-/* Animação do diálogo */
+/* Animação do dialog*/
 @keyframes slideIn {
     from {
         opacity: 0;
