@@ -67,6 +67,7 @@ function salvarRegistroLocalStorage(ponto) {
     localStorage.setItem("registros", JSON.stringify(pontos));
 }
 
+
 // Evento para registrar o ponto
 const btnDialogRegistrarPonto = document.getElementById("btn-dialog-registrar-ponto");
 btnDialogRegistrarPonto.addEventListener("click", () => {
@@ -120,11 +121,13 @@ function dataCompleta() {
     return String(date.getDate()).padStart(2, '0') + "/" + String((date.getMonth() + 1)).padStart(2, '0') + "/" + date.getFullYear();
 }
 
+
 // Função para obter a hora completa
 function horaCompleta() {
     const date = new Date();
     return String(date.getHours()).padStart(2, '0') + ":" + String(date.getMinutes()).padStart(2, '0') + ":" + String(date.getSeconds()).padStart(2, '0');
 }
+
 
 // Função para atualizar a hora exibida na página
 function atualizaHora() {
@@ -132,12 +135,10 @@ function atualizaHora() {
     DialogHoraMinSeg.textContent = horaCompleta();
 }
 
+
 // Atualiza a hora imediatamente e a cada segundo
 atualizaHora();
 setInterval(atualizaHora, 1000);
-
-
-
 
 
 
@@ -153,8 +154,6 @@ function exibirDadosLocalStorage() {
     const listaRegistros = document.getElementById("lista-registros");
 
     listaRegistros.innerHTML = ""; // Limpa a lista antes de adicionar os itens
-
-
 
 
 
@@ -187,7 +186,6 @@ function exibirRegistros(registros) {
 
 
 
-
         //botao de excluir
         const btnExcluir = document.createElement("button");
         btnExcluir.textContent = "excluir";
@@ -198,19 +196,8 @@ function exibirRegistros(registros) {
 
         item.appendChild(btnExcluir);
         listaRegistros.appendChild(item);
-
-
-
-
     });
 }
-
-
-
-
-
-
-
 
 
 
@@ -231,11 +218,8 @@ function editarRegistro(id) {
 
 
 
-
 // Chama a função para exibir os dados ao carregar a página
 document.addEventListener("DOMContentLoaded", exibirDadosLocalStorage);
-
-
 
 
 
@@ -247,41 +231,28 @@ document.getElementById('menu-toggle').addEventListener('click', function() {
 
 
 
-
-
-
-
-
 //logica pro botao de mostrar os registros
-const dialogRegistros = document.getElementById("dialog-registros-passados");
-const btnFecharRegistros = document.getElementById("fechar-registros");
+    const dialogRegistros = document.getElementById("dialog-registros-passados");
+    const btnFecharRegistros = document.getElementById("fechar-registros");
 
-
-
-const btndialogRegistros = document.getElementById("mostrar-registros");
-    btndialogRegistros.addEventListener ("click", () => {
-    dialogRegistros.showModal();
-
-    
-  
-
+    const btndialogRegistros = document.getElementById("mostrar-registros");
+        btndialogRegistros.addEventListener ("click", () => {
+        dialogRegistros.showModal();
 });
 
 
 
-
 // logica para o registro de ausencia
+    const dialogAusencia = document.getElementById("dialog-ausencia");
+    const btnRegistrarAusencia = document.getElementById("btn-dialog-registrar-ausencia");
+    const btnFecharDialog = document.getElementById("btn-dialog-fechar");
+    const inputJustificativa = document.getElementById("justificativa-ausencia");
+    const inputAtestado = document.getElementById("atestado-ausencia");
 
-const dialogAusencia = document.getElementById("dialog-ausencia");
-const btnRegistrarAusencia = document.getElementById("btn-dialog-registrar-ausencia");
-const btnFecharDialog = document.getElementById("btn-dialog-fechar");
-const inputJustificativa = document.getElementById("justificativa-ausencia");
-const inputAtestado = document.getElementById("atestado-ausencia");
-
-btnRegistrarAusencia.addEventListener("click", () => {
-    const justificativa = inputJustificativa.value;
-    const atestado = inputAtestado.files[0] ? inputAtestado.files[0].name : "Nenhum atestado anexado";
-    
+    btnRegistrarAusencia.addEventListener("click", () => {
+        const justificativa = inputJustificativa.value;
+        const atestado = inputAtestado.files[0] ? inputAtestado.files[0].name : "Nenhum atestado anexado";
+        
     if (justificativa) {
         const registros = JSON.parse(localStorage.getItem("registros")) || [];
         registros.push({ justificativa, atestado, tipo: "ausencia" });
@@ -295,38 +266,10 @@ btnRegistrarAusencia.addEventListener("click", () => {
 });
 
 
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   //logica pra abrir o dialog de justificativa de ausencia
+   
+//logica pra abrir o dialog de justificativa de ausencia
     const btnFecharAusencia = document.getElementById("fechar-ausencia");
     const btndialogAusencia = document.getElementById("mostrar-ausencia");
         btndialogAusencia.addEventListener ("click", () => {
         dialogAusencia.showModal();
-        
-      
-    
-        });
-
-
-
-
-
-
-
-
-
+});

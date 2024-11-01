@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de controle de ponto</title>
+    <link rel="shortcut icon" href="../images/calendario.png" type="images"> 
+    <title>Ponto eletrônico</title>
     <link rel="stylesheet" href="../sistema-de-ponto-eletronico/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -29,39 +30,42 @@
         <p id="dialog-dia-mes-ano">01/09/2024</p>
         <p id="dialog-hora-min-seg">08:59:20</p>
 
-    <select name="select-tipos-pontos" id="select-tipos-pontos">
-        <option value="Entrada">Entrada</option>
-        <option value="intervalo">intervalo</option>
-        <option value="Volta-intervalo">Volta intervalo</option>
-        <option value="Saida">Saida</option>
-    </select>
-<button id="btn-dialog-registrar-ponto">Registrar-ponto</button>
-<button id="btn-dialog-fechar" class="btn-dialog-fechar">X</button>
 
-</dialog>
-    <div id="div-btnresgistrar-ponto"> 
-        <button id="btn-registrar-ponto">REGISTRAR PONTO</button>
-    </div>
+<!--TIPOS DE PONTO-->
+        <select name="select-tipos-pontos" id="select-tipos-pontos">
+            <option value="Entrada">Entrada</option>
+            <option value="Intervalo">Intervalo</option>
+            <option value="Volta-intervalo">Volta-intervalo</option>
+            <option value="Saida">Saída</option>
+        </select>
+
+<!--BOTÃO DENTRO DO DIALOG-->
+        <button id="btn-dialog-registrar-ponto">REGISTRAR-PONTO</button>
+        <button id="btn-dialog-fechar" class="btn-dialog-fechar">X</button>
+
+    </dialog>
+        <div id="div-btnresgistrar-ponto"> 
+            <button id="btn-registrar-ponto">REGISTRAR PONTO</button>
+        </div>
     
-    <div id="div-alerta" class="hidden">
-        <p id="alerta-texto">Ponto Registrado como:  as </p>
-    </div>
-
+        <div id="div-alerta" class="hidden">
+            <p id="alerta-texto">Ponto registrado como:  as </p>
+        </div>
 
 
 <!--botao para aparecer os registros antigos-->
 <dialog id="dialog-registros-passados" class="dialog-registros">
     <form method="dialog">
         <p>
-<div class="main-content">
+    <div class="main-content">
         <h1>Relatórios Passados</h1>
             <button id="fechar-registros" class="button-fechar-registros">X</button>
        
         <div class="div-registros">
             <fieldset>
             <ul id="lista-registros"></ul>
-            </fieldset>        
-        </div>
+        </fieldset>        
+    </div>
 </div>
 </p>
     </form>
