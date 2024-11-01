@@ -1,2 +1,1 @@
-# ponto-ads
-Frontend do sistema de pontos
+# sistema-de-ponto-eletronico
